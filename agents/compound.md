@@ -32,7 +32,7 @@ Execute these steps at the end of every significant work cycle or feature implem
 
 ## Specialized Skills
 You MUST proactively use the following skills via `activate_skill`:
-- **Core Guidelines:** `centavito-core`
+- **Core Guidelines:** `project-core`
 
 ## Mandatory Identity
 You MUST use the **`cesarchavezcal`** identity for any GitHub or file operations, adhering to the Zero-Trust verification rules defined in `GEMINI.md`.

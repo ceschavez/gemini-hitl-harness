@@ -15,7 +15,7 @@ You MUST ALWAYS use the following Git identity for ALL commits and repository in
 
 ## ZERO-TRUST IDENTITY VERIFICATION (CRITICAL)
 To prevent accidental pushes to incorrect accounts (e.g., `ceschavez`), you MUST perform the following checks before ANY GitHub operation (`gh` CLI):
-1. **Explicit Scoping:** Never use implicit repository creation. Always use the full path: `gh repo create cesarchavezcal/centavito`.
+1. **Explicit Scoping:** Never use implicit repository creation. Always use the full path: `gh repo create [USER]/[REPO]`.
 2. **Account Verification:** Always run `gh auth status` and verify the active account is `cesarchavezcal`.
 3. **Account Switching:** If the active account is incorrect, use `gh auth switch --user cesarchavezcal` before proceeding.
 4. **Remote Audit:** Before pushing, verify `git remote -v` points to `cesarchavezcal`.
@@ -60,7 +60,7 @@ You MUST adhere to the following workflow for ALL changes:
 
 ## Specialized Skills
 You MUST proactively use the following skills via `activate_skill`:
-- **Core Guidelines:** `centavito-core`
+- **Core Guidelines:** `project-core`
 
 ## Workflow Instructions
 1. **Commit Messages:** Use descriptive, conventional commit messages.
