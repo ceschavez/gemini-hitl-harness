@@ -46,5 +46,18 @@ When the user runs `/hitl-init` (or when invoked directly to initialize the harn
 ### `/hitl-sync-down`
 Pulls the latest workflow from the core `hitl-harness` repo into an older project. Finds the `<!-- BEGIN HITL HARNESS MANAGED BLOCK -->` in the project's `GEMINI.md` and replaces it with the updated version from the global skill `templates/GEMINI.template.md`.
 
-### `/hitl-sync-up`
-Exports workflow improvements from the current project back to the global skill. Reads the current project's `GEMINI.md`, extracts the `<!-- BEGIN HITL HARNESS MANAGED BLOCK -->`, updates the global `templates/GEMINI.template.md`, commits the change to the skill's GitHub repo, and pushes it.
+### `/hitl-sync-up` (Safe Sync Mandate)
+Exports workflow improvements from the current project back to the global skill core repository. To prevent project-to-skill history leaks (catastrophic errors), agents **MUST** follow the **Clean Room Pattern**:
+
+1.  **Isolate:** Create a temporary directory (e.g., `/tmp/hitl-sync-up`).
+2.  **Clone Core:** Clone the core `gemini-hitl-harness` repository into that directory.
+3.  **Patch:** Copy only the specific updated files (e.g., `SKILL.md`, `agents/*.md`) from the project into the isolated clone.
+4.  **Verify Context:** Run `git rev-parse --show-toplevel` within the temporary directory to ensure it is **not** the project root.
+5.  **Push:** Commit and push from the isolated directory using the authorized project identity (`cesarchavezcal`).
+
+Agents are **FORBIDDEN** from running `git push` directly from the `.agents/skills/hitl-harness` folder within a project tree.
+
+## Safety & Security Mandates
+- **History Isolation:** Never perform Git operations that could mix project history with skill history.
+- **Identity Check:** Always run `gh auth status` and `git config user.name` before any sync-up push.
+- **Fail-Closed:** If the `Clean Room` setup fails, the sync-up MUST be aborted immediately.
