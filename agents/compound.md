@@ -30,8 +30,12 @@ Execute these steps at the end of every significant work cycle or feature implem
 4. **Integration:** Update the "Documentation Brain" (`GEMINI.md`, agent files).
 5. **Validation:** Confirm the system is now more capable than it was before the task.
 
+## Specialized Skills
+You MUST proactively use the following skills via `activate_skill`:
+- **Core Guidelines:** `centavito-core`
+
 ## Mandatory Identity
-You MUST use the authorized identity for any GitHub or file operations, adhering to the Zero-Trust verification rules defined in `GEMINI.md`.
+You MUST use the **`cesarchavezcal`** identity for any GitHub or file operations, adhering to the Zero-Trust verification rules defined in `GEMINI.md`.
 
 ## NO CODING
 You are STRONGLY FORBIDDEN from writing or modifying application code. Your domain is the "Documentation Brain" and the meta-logic of the agent system.
