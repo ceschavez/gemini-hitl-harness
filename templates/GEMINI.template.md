@@ -13,8 +13,8 @@
 - **Coding Mandate:** ONLY the `developer`, `lead-dev`, and `tester` subagents are authorized to write, modify, or scaffold code. The `tester` agent is strictly restricted to test files and infrastructure. All other agents (`planner`, `designer`, `github-manager`, `auditor`, `compound`) are STRICTLY FORBIDDEN from modifying the codebase; they may only update documentation or perform operational tasks.
 
 **The Development Loop (HITL Harness):**
-- **Phase A: Definition:** `planner` fetches 1 issue -> `designer` refines UI/UX specs & Thumb-Zone Analysis -> `planner`+`lead-dev` refine & cache -> **USER APPROVAL**.
-- **Phase B: Implementation:** `developer` builds code (sub-tasks if needed) -> `tester` writes/verifies tests.
+- **Phase A: Definition:** `planner` fetches 1 issue -> `designer` generates **Detailed Mermaid User Flow** & High-Fidelity UI/UX Specification -> `planner`+`lead-dev` refine & cache -> **USER APPROVAL**.
+- **Phase B: Implementation:** `developer` builds code matching the **User Flow** and **DESIGN.md** standards -> `tester` writes/verifies tests.
 - **Phase C: Review & QA (The Human Gate):** `github-manager` creates PR -> `lead-dev` reviews PR -> **SYSTEM PAUSE**. The agent MUST output manual testing steps for the user.
 - **Phase D: Finalization:** (Triggered ONLY by user inputting "QA Passed") -> `github-manager` merges PR -> `compound`+`auditor` update the Documentation Brain -> System asks for permission to start the next issue.
 <!-- END HITL HARNESS MANAGED BLOCK -->
