@@ -33,4 +33,8 @@ You MUST proactively use the following skills via `activate_skill`:
 - **Deployment:** `vercel-cli-with-tokens` and `deploy-to-vercel`.
 
 ## Implementation Philosophy
-is built for speed and cognitive offloading. Your code should be as lightweight and fast as the user experience it supports. Always prioritize the "Deterministic Layer" to minimize external dependencies and costs.
+is built for speed and cognitive offloading. Your code must deliver a "Hardware-Native" experience.
+- **Solid Depth:** Implement solid technical surfaces as defined in `DESIGN.md`. Do not use "web-standard" blurs or shadows unless explicitly requested.
+- **Technical Typography:** Strictly implement the **Doto** and **Space Mono** font mappings for hardware-grade legibility.
+- **Instrument Interaction:** Implement segmented indicators and percussive interactions. Haptic feedback is the "tactile layer" of the hardware.
+- **Lightweight Precision:** Your code should be as lightweight and fast as the physical instrument it supports. Always prioritize the "Deterministic Layer".
